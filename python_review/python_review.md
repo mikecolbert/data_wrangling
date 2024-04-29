@@ -1,17 +1,10 @@
-# Data Wrangling
-## Python Data Types
-### Boolean
-### Integer
-### Float
-### Strings
-
-## Python Data Structures
-### [Lists]
+# Python Data Structures
+## [Lists]
 - Square brackets []
 - Mutable data structure  
 - Can contain same or different data types and even sub-lists  
 
-#### Creating lists
+### Creating lists
 ```python
 list_0 = [] # empty list
 list_1 = ["dog", "cat", "hamster"]
@@ -25,7 +18,7 @@ fruit_list = [{"apple":12,"banana":8},{"cherry":1, "blueberry":4}]
 fruit_list = [("apple", 12),("banana", 8),("cherry",1),("blueberry",4)]
 ```
 
-#### Accessing list elements with indices
+### Accessing list elements with indices
 ```python
 # Create list
 lst = ["apple", "banana", "cherry", "blueberry"]
@@ -76,7 +69,7 @@ print(list_3[2])
 hamster
 ```
 
-#### List methods
+### List methods
 
 ```python
 # Append element to th end of the list
@@ -148,13 +141,13 @@ print(lst3)
 # []
 ```
   
-### (Tuples)
+## (Tuples)
 - Parens ()
 - Immutable data structure (cannot be changed after creation)
 - Faster than lists
 - Can contain same or different data types 
 
-#### Creating tuples
+### Creating tuples
 ```python
 tuple_1 = ("dog", "cat", "hamster")
 tuple_2 = (1, 2.01, 5, "pig")
@@ -177,7 +170,7 @@ fruit_tuple = tuple(fruit_list)
 set_1 = {5,6,7,8}
 numeric_tuple = tuple(set_1)
 ```
-#### Accessing tuple elements with indices
+### Accessing tuple elements with indices
 ```python
 fruit_tuple = ('apple', 'banana', 'blueberry', 'banana', 'cherry', 'cherry')
 
@@ -210,7 +203,7 @@ fruit_tuple[0:3]
 # ('apple', 'banana', 'blueberry')
 ```
 
-#### Tuple methods
+### Tuple methods
 ```python
 # Count the number of occurences of an element in the tuple
 fruit_tuple.count('cherry')
@@ -220,9 +213,9 @@ fruit_tuple.count('cherry')
 fruit_tuple.index('banana')
 # 1
 ```
-### Dictionary
+## Dictionary
 
-### Set
+## Set
 
 #queue
 #stack/dequeue
