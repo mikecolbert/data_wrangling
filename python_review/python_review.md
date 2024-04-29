@@ -6,7 +6,7 @@
 ### Strings
 
 ## Python Data Structures
-### Lists
+### [Lists]
 - Square brackets []
 - Mutable data structure  
 - Can contain same or different data types and even sub-lists  
@@ -23,7 +23,6 @@ fruit_list = [{"apple":12,"banana":8},{"cherry":1, "blueberry":4}]
     
 # A list containing tuples
 fruit_list = [("apple", 12),("banana", 8),("cherry",1),("blueberry",4)]
-
 ```
 
 #### Accessing list elements with indices
@@ -88,7 +87,7 @@ lst.append("apple")
 lst.insert("cherry", 1)
 # ['apple', 'cherry', 'banana', 'cherry', 'blueberry', 'apple']
 
-# Count the number of occurences of an element in the list
+# Count the number of occurences of an element value in the list
 lst.count("apple")
 # 2
 
@@ -148,10 +147,81 @@ lst3.clear()
 print(lst3)
 # []
 ```
+  
+### (Tuples)
+- Parens ()
+- Immutable data structure (cannot be changed after creation)
+- Faster than lists
+- Can contain same or different data types 
 
+#### Creating tuples
+```python
+tuple_1 = ("dog", "cat", "hamster")
+tuple_2 = (1, 2.01, 5, "pig")
 
+# A list containing dictionaries
+fruit_list = [{"apple":12,"banana":8},{"cherry":1, "blueberry":4}]
+    
+# A list containing tuples
+fruit_list = [("apple", 12),("banana", 8),("cherry",1),("blueberry",4)]
+
+# Convert a string to tuple
+fruit = "apple"
+fruit_tuple = tuple(fruit)
+
+# Convert a list to tuple
+fruit_list = ['apple', 'banana', 'blueberry', 'banana', 'cherry', 'cherry']
+fruit_tuple = tuple(fruit_list)    
+
+# Convert a set to tuple
+set_1 = {5,6,7,8}
+numeric_tuple = tuple(set_1)
+```
+#### Accessing tuple elements with indices
+```python
+fruit_tuple = ('apple', 'banana', 'blueberry', 'banana', 'cherry', 'cherry')
+
+# Get the length of the tuple
+len(fruit_tuple)
+# 6
+
+# Delete a list
+del(fruit_tuple)
+
+# Tuple indices (zero indexing)
+fruit_tuple[0]
+# 'apple'
+fruit_tuple[2]
+# 'blueberry'
+
+# Negative tuple indices
+fruit_tuple[-1]  # last element in the tuple
+# 'cherry'
+
+fruit_tuple[-2:] # the last two elements in the tuple
+# ('cherry', 'cherry')
+
+fruit_tuple[:-2] # everything except the last two elements in the tuple
+# ('apple', 'banana', 'blueberry', 'banana')
+
+# [start_index (inclusive) : end_index (exclusive)]
+# The slice will include the start_index, and everything until but excluding the end_index
+fruit_tuple[0:3]
+# ('apple', 'banana', 'blueberry')
+```
+
+#### Tuple methods
+```python
+# Count the number of occurences of an element in the tuple
+fruit_tuple.count('cherry')
+# 2
+
+# Return the position (index) of the first occurance of an element in the tuple
+fruit_tuple.index('banana')
+# 1
+```
 ### Dictionary
-### Tuple
+
 ### Set
 
 #queue
