@@ -17,6 +17,13 @@ list_0 = [] # empty list
 list_1 = ["dog", "cat", "hamster"]
 list_2 = [1, 2.01, 5, 6.7]
 list_3 = [["dog", 24], ["cat", 5], "hamster", 0]
+
+# A list containing dictionaries
+fruit_list = [{"apple":12,"banana":8},{"cherry":1, "blueberry":4}]
+    
+# A list containing tuples
+fruit_list = [("apple", 12),("banana", 8),("cherry",1),("blueberry",4)]
+
 ```
 
 #### Accessing list elements with indices
