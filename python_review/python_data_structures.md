@@ -361,7 +361,118 @@ vehicles.values()
 # dict_values(['Ford', 'Explorer', 2018, 25999.99, {'cylinders': 8, 'hybrid': True}])
 ```
 
-## Set
+## Sets
+- unordered collection (unlike lists, we cannot access items using indexes)
+- iterable and mutable 
+- has no duplicate elements  
+
+
+### Creating sets
+```python
+# Creating an empty set
+empty_set = set()
+print(empty_set)
+# set()
+
+# Creating a set of integers
+set_1 = {1, 2, 3, 4, 5}
+print(set_1)
+# {1, 2, 3, 4, 5}
+
+# Creating a set of strings
+set_2 = {"apple", "banana", "cherry"}
+print(set_2)
+# {'banana', 'apple', 'cherry'}
+
+# Creating a set from a list
+list_1 = [1, 2, 3, 4, 5, 4, 4, 3, 1]
+set_3 = set(list_1)
+print(set_3)
+# {1, 2, 3, 4, 5} # notice duplicates have been removed
+```
+### Accessing set elements
+```python
+accounting = {"Angela", "Oscar"}
+
+# accounting is a set data structure
+type(accounting)
+
+# accounting is a two element set
+len(accounting)
+# 2
+
+# Delete a set
+del(accounting)
+```
+### Set methods
+```python
+# Add a single element to the set
+accounting = {"Angela", "Oscar"}
+print(accounting)
+# {'Oscar', 'Angela'}
+accounting.add("Kevin")
+print(accounting)
+# {'Kevin', 'Oscar', 'Angela'}
+
+
+# Add all elements from an iterable (list, tuple, or set) to the set.
+office = set() # empty set
+accounting = {"Angela", "Oscar", "Stanley", "Kevin"} # set
+sales = ("Dwight", "Jim", "Stanley", "Phyllis") # tuple
+hr = ["Toby"] # list
+print(office)
+# set()
+office.update(accounting)
+print(office)
+# {'Stanley', 'Kevin', 'Oscar', 'Angela'
+
+
+# Remove a specified element from the set. Raise a KeyError if the element is not present.
+accounting = {"Angela", "Oscar", "Stanley", "Kevin"}
+print(accounting)
+# {'Stanley', 'Kevin', 'Oscar', 'Angela'}
+accounting.remove("Stanley")
+print(accounting)
+# {'Kevin', 'Oscar', 'Angela'}
+accounting.remove("Phyllis") # this would generate a key error
+
+# Remove a specified element from the set if it is present. Does not raise an error if the element is not present.
+accounting = {"Angela", "Oscar", "Stanley", "Kevin"}
+print(accounting)
+# {'Stanley', 'Kevin', 'Oscar', 'Angela'}
+accounting.discard("Stanley")
+print(accounting)
+# {'Kevin', 'Oscar', 'Angela'}
+accounting.discard("Phyllis") # this would not generate an error
+
+# Remove all elements from the set
+accounting = {"Angela", "Oscar", "Stanley", "Kevin"} # set
+print(accounting)
+# {'Stanley', 'Kevin', 'Oscar', 'Angela'}
+accounting.clear()
+print(accounting)
+# set()
+
+# Return a copy of the set
+accounting = {"Angela", "Oscar", "Stanley", "Kevin"} # set
+accounting_2 = accounting.copy()
+print(accounting_2)
+# {'Stanley', 'Kevin', 'Oscar', 'Angela'}
+
+
+
+intersection(other_set): Returns a new set containing only the elements that are common to both sets.
+union(other_set): Returns a new set containing all the elements from both sets.
+difference(other_set): Returns a new set containing the elements that are present in the original set but not in the other set.
+symmetric_difference(other_set): Returns a new set containing elements that are present in either the original set or the other set, but not in both.
+
+pop(): Removes and returns an arbitrary element from the set. Raises a KeyError if the set is empty.
+
+issubset(other_set): Checks if the set is a subset of another set.
+issuperset(other_set): Checks if the set is a superset of another set.
+isdisjoint(other_set): Checks if the set has no elements in common with another set.
+
+```
 
 #queue
 #stack/dequeue
