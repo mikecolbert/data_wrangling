@@ -1,7 +1,7 @@
 # Python Data Structures
 [Lists](#lists)
 [Tuples](#tuples)
-[Dictionaries](#dictionaries})
+[Dictionaries](#dictionaries)
 ## [Lists]
 - Square brackets []
 - Mutable data structure  
