@@ -1,7 +1,6 @@
 # Python Data Structures
-[Lists](#lists)
-[Tuples](#tuples)
-[Dictionaries](#dictionaries)
+[Lists](#lists) | [Tuples](#tuples) | [Dictionaries](#dictionaries) | [Sets](#sets)  
+  
 ## [Lists]
 - Square brackets []
 - Mutable data structure  
@@ -414,7 +413,6 @@ accounting.add("Kevin")
 print(accounting)
 # {'Kevin', 'Oscar', 'Angela'}
 
-
 # Add all elements from an iterable (list, tuple, or set) to the set.
 office = set() # empty set
 accounting = {"Angela", "Oscar", "Stanley", "Kevin"} # set
@@ -425,7 +423,6 @@ print(office)
 office.update(accounting)
 print(office)
 # {'Stanley', 'Kevin', 'Oscar', 'Angela'
-
 
 # Remove a specified element from the set. Raise a KeyError if the element is not present.
 accounting = {"Angela", "Oscar", "Stanley", "Kevin"}
@@ -459,10 +456,27 @@ accounting_2 = accounting.copy()
 print(accounting_2)
 # {'Stanley', 'Kevin', 'Oscar', 'Angela'}
 
+# Returns a new set containing only the elements that are common to both sets
+accounting = {"Angela", "Oscar", "Stanley", "Kevin"}
+sales = {"Dwight", "Jim", "Stanley", "Phyllis"}
+hr = {"Toby"}
+management = {"Michael", "Dwight"}
+sales_mgmt = sales.intersection(management)
+print(sales_mgmt)
+# {'Dwight'}
+
+# Returns a new set containing all the elements from both sets.
+accounting = {"Angela", "Oscar", "Stanley", "Kevin"}
+sales = {"Dwight", "Jim", "Stanley", "Phyllis"}
+hr = {"Toby"}
+management = {"Michael", "Dwight"}
+sales_mgmt = sales.union(management)
+print(sales_mgmt)
+# {'Michael', 'Stanley', 'Jim', 'Phyllis', 'Dwight'} # notice "Dwight" duplicate not imported twice
 
 
-intersection(other_set): Returns a new set containing only the elements that are common to both sets.
-union(other_set): Returns a new set containing all the elements from both sets.
+
+
 difference(other_set): Returns a new set containing the elements that are present in the original set but not in the other set.
 symmetric_difference(other_set): Returns a new set containing elements that are present in either the original set or the other set, but not in both.
 
