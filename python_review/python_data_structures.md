@@ -287,21 +287,45 @@ print(vehicles)
 
 ### Dictionary methods
 ```python
+# Returns a copy of the dictionary
+vehicles = {"make":"Ford", "model":"Explorer", "year":2018, "price": 25999.99}
+vehicles_2 = vehicles.copy()
+print(vehicles)
+# {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99}
+print(vehicles_2)
+# {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99}
 
 # Removes all the elements from a dictionary
-.clear()
+vehicles_2.clear()
+print(vehicles)
+# {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99}
+print(vehicles_2)
+# {}
 
-# Returns a copy of the dictionary
-.copy()
+# Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+vehicles = {"make":"Ford", "model":"Explorer", "year":2018, "price": 25999.99}
+print(vehicles)
+# {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99}
+vehicles.setdefault("lot","A") # "lot" key doesn't exist so it is added
+print(vehicles)
+# {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99, 'lot': 'A'}
+vehicles.setdefault("model", "test") # "model" key exists so it is returned
+# Explorer
 
 # Returns a dictionary with the specified keys and value
-.fromkeys()
+keys = ( "key_1", "key_2", "key_3")
+values = 0
+new_dict = dict.fromkeys(keys, values)
+print(new_dict)
+# {'key_1': 0, 'key_2': 0, 'key_3': 0}
 
 # Returns the value of a specified key
-.get()
+print(vehicles.get("year"))
+# 2019
 
 # Returns a list containing a tuple for each key value pair
-.items()
+print(vehicles.items())
+# dict_items([('make', 'Ford'), ('model', 'Explorer'), ('year', 2019), ('price', 25999.99), ('trim_level', 'sport')]
 
 # Returns a list of dictionary keys
 vehicles.keys()
@@ -322,15 +346,12 @@ vehicles.popitem()
 print(vehicles)
 {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99}
 
-# Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
-.setdefault()
-
 # Updates the dictionary with the new specified key-value pairs
 print(vehicles)
 # {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99}
-vehicles.update({"color":"gray"}) # pass parameter as a dictionary
+vehicles.update({"year": 2019, "trim_level":"sport"}) # pass parameter as a dictionary, updates existing value, adds new key:value
 print(vehicles)
- # {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99, 'color': 'gray'}
+ # {'make': 'Ford', 'model': 'Explorer', 'year': 2019, 'price': 25999.99, 'trim_level': 'sport'}
 
 # Returns a list of dictionary values
 vehicles.values()
