@@ -458,7 +458,7 @@ accounting_2 = accounting.copy()
 print(accounting_2)
 # {'Stanley', 'Kevin', 'Oscar', 'Angela'}
 
-# Returns a new set containing only the elements that are common to both sets
+# Return a new set containing only the elements that are common to both sets
 accounting = {"Angela", "Oscar", "Stanley", "Kevin"}
 sales = {"Dwight", "Jim", "Stanley", "Phyllis"}
 hr = {"Toby"}
@@ -467,7 +467,7 @@ sales_mgmt = sales.intersection(management)
 print(sales_mgmt)
 # {'Dwight'}
 
-# Returns a new set containing all the elements from both sets.
+# Return a new set containing all the elements from both sets.
 accounting = {"Angela", "Oscar", "Stanley", "Kevin"}
 sales = {"Dwight", "Jim", "Stanley", "Phyllis"}
 hr = {"Toby"}
@@ -476,18 +476,78 @@ sales_mgmt = sales.union(management)
 print(sales_mgmt)
 # {'Michael', 'Stanley', 'Jim', 'Phyllis', 'Dwight'} # notice "Dwight" duplicate not imported twice
 
+# Return a new set containing the elements that are present in the original set but not in the other set.
+accounting = {"Angela", "Oscar", "Stanley", "Kevin"}
+sales = {"Dwight", "Jim", "Stanley", "Phyllis"}
+hr = {"Toby"}
+management = {"Michael", "Dwight"}
+# Find the difference between sales and management?
+sales_mgmt_diff = sales.difference(management)
+print(sales_mgmt_diff)
+# {'Phyllis', 'Stanley', 'Jim'}
+# Find the difference between management and sales?
+mgmt_sales_diff = management.difference(sales)
+print(mgmt_sales_diff)
+# {'Michael'}
 
+# Return a new set containing elements that are present in either the original set or the other set, but not in both.
+sales_mgmt_diff = sales.symmetric_difference(management)
+print(sales_mgmt_diff)
+# {'Stanley', 'Michael', 'Jim', 'Phyllis'}
 
+# Remove and return an arbitrary element from the set. Raise a KeyError if the set is empty.
+all_office = set() # empty set
+accounting = {"Angela", "Oscar", "Stanley", "Kevin"}
+sales = {"Dwight", "Jim", "Stanley", "Phyllis"}
+hr = {"Toby"}
+management = {"Michael", "Dwight"}
+all_office.update(accounting, sales)
+print(all_office)
+# {'Stanley', 'Dwight', 'Jim', 'Kevin', 'Phyllis', 'Oscar', 'Angela'}
+user_pop = all_office.pop()
+print(user_pop)
+# Stanley
+print(all_office)
+# {'Dwight', 'Jim', 'Kevin', 'Phyllis', 'Oscar', 'Angela'}
 
-difference(other_set): Returns a new set containing the elements that are present in the original set but not in the other set.
-symmetric_difference(other_set): Returns a new set containing elements that are present in either the original set or the other set, but not in both.
+# Check if the set is a subset of another set.
+# set.issubset(other_set)
+all_office = set() # empty set
+accounting = {"Angela", "Oscar", "Stanley", "Kevin"}
+sales = {"Dwight", "Jim", "Stanley", "Phyllis"}
+hr = {"Toby"}
+management = {"Michael", "Dwight"}
+all_office.update(accounting, sales)
+print(all_office)
+# {'Stanley', 'Dwight', 'Jim', 'Kevin', 'Phyllis', 'Oscar', 'Angela'}
+accounting.issubset(all_office)
+# True
 
-pop(): Removes and returns an arbitrary element from the set. Raises a KeyError if the set is empty.
+# Check if the set is a superset of another set.
+# set.issuperset(other_set)
+all_office = set() # empty set
+accounting = {"Angela", "Oscar", "Stanley", "Kevin"}
+sales = {"Dwight", "Jim", "Stanley", "Phyllis"}
+hr = {"Toby"}
+management = {"Michael", "Dwight"}
+all_office.update(accounting, sales)
+print(all_office)
+# {'Stanley', 'Dwight', 'Jim', 'Kevin', 'Phyllis', 'Oscar', 'Angela'}
+all_office.issuperset(accounting)
+# True
 
-issubset(other_set): Checks if the set is a subset of another set.
-issuperset(other_set): Checks if the set is a superset of another set.
-isdisjoint(other_set): Checks if the set has no elements in common with another set.
-
+# Check if the set has no elements in common with another set. 
+# set.isdisjoint(other_set)
+all_office = set() # empty set
+accounting = {"Angela", "Oscar", "Stanley", "Kevin"}
+sales = {"Dwight", "Jim", "Stanley", "Phyllis"}
+hr = {"Toby"}
+management = {"Michael", "Dwight"}
+all_office.update(accounting, sales)
+print(all_office)
+# {'Stanley', 'Dwight', 'Jim', 'Kevin', 'Phyllis', 'Oscar', 'Angela'}
+all_office.isdisjoint(hr)
+# True
 ```
 
 #queue
