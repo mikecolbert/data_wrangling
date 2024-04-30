@@ -178,7 +178,7 @@ fruit_tuple = ('apple', 'banana', 'blueberry', 'banana', 'cherry', 'cherry')
 len(fruit_tuple)
 # 6
 
-# Delete a list
+# Delete a tuple
 del(fruit_tuple)
 
 # Tuple indices (zero indexing)
@@ -213,7 +213,129 @@ fruit_tuple.count('cherry')
 fruit_tuple.index('banana')
 # 1
 ```
-## Dictionary
+## {Dictionaries}
+- curly braces {}
+- Mutable data structure
+- Ordered in Python >3.6 (can refer to index)
+- key:value pairs
+- Cannot have duplicate keys
+- Can contain same or different data types 
+- Keys must be immutable data types (strings, numbers, tuples)
+- Values can be any data type - string, integer, a list, another dictionary, boolean, etc.
+
+### Creating dictionaries
+```python
+# Create an empty dictionary
+vehicles = dict()
+print(vehicles)
+# {}
+
+# Create a dictionary
+vehicles = {"make":"Ford", "model":"Explorer", "year":2018, "price": 25999.99}
+print(vehicles)
+# {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99}
+
+# Create a dictionary with various data types
+# Notice "engine" key has a value that is another dictionary
+vehicles = {"make":"Ford", "model":"Explorer", "year":2018, "price": 25999.99, "engine":{"cylinders": 8, "hybrid": True}}
+print(vehicles)
+# {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99, 'engine': {'cylinders': 8, 'hybrid': True}}
+
+### convert tuple to dictionary
+### convert list to dictionary
+```
+### Accessing dictionary elements
+```python
+vehicles = {"make":"Ford", "model":"Explorer", "year":2018, "price": 25999.99, "engine":{"cylinders": 8, "hybrid": True}}
+print(vehicles)
+# {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99, 'engine': {'cylinders': 8, 'hybrid': True}}
+
+# Access value by key name
+print(vehicles["price"])
+# 25999.99
+
+# "hybrid" key inside of "engine" key
+print(vehicles["engine"]["hybrid"])
+# True
+
+# vehicles is a five element dictionary.
+len(vehicles)
+# 5
+
+# there is a two element dictionary inside of the "engine" key.
+len(vehicles["engine"])
+# 2
+
+# Delete a dictionary
+del(vehicles)
+```
+
+### Dictionary use cases
+```python
+# Create a list of dictionaries
+vehicles = [{"make":"Ford", "model":"Explorer", "year":2018, "price": 25999.99, "engine":{"cylinders": 8, "hybrid": True}}]
+
+# Append a new dictionary to the list
+new_vehicle = {"make":"Chevy", "model":"Tahoe", "year":2022, "price": 35999, "engine":{"cylinders": 8, "hybrid": False}}
+vehicles.append(new_vehicle)
+
+print(vehicles)
+[{'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99, 'engine': {'cylinders': 8, 'hybrid': True}}, 
+{'make': 'Chevy', 'model': 'Tahoe', 'year': 2022, 'price': 35999, 'engine': {'cylinders': 8, 'hybrid': False}}]
+```
+
+
+### Dictionary methods
+```python
+
+# Removes all the elements from a dictionary
+.clear()
+
+# Returns a copy of the dictionary
+.copy()
+
+# Returns a dictionary with the specified keys and value
+.fromkeys()
+
+# Returns the value of a specified key
+.get()
+
+# Returns a list containing a tuple for each key value pair
+.items()
+
+# Returns a list of dictionary keys
+vehicles.keys()
+# dict_keys(['make', 'model', 'year', 'price', 'engine'])
+
+# Removes the element with the specified key
+vehicles = {"make":"Ford", "model":"Explorer", "year":2018, "price": 25999.99, "engine":{"cylinders": 8, "hybrid": True}}
+print(vehicles)
+# {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99, 'engine': {'cylinders': 8, 'hybrid': True}}
+vehicles.pop("engine")
+print(vehicles)
+# {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99}
+
+# Removes the last inserted key value pair
+print(vehicles)
+# {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99, 'color': 'gray'}
+vehicles.popitem()
+print(vehicles)
+{'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99}
+
+# Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+.setdefault()
+
+# Updates the dictionary with the new specified key-value pairs
+print(vehicles)
+# {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99}
+vehicles.update({"color":"gray"}) # pass parameter as a dictionary
+print(vehicles)
+ # {'make': 'Ford', 'model': 'Explorer', 'year': 2018, 'price': 25999.99, 'color': 'gray'}
+
+# Returns a list of dictionary values
+vehicles.values()
+# dict_values(['Ford', 'Explorer', 2018, 25999.99, {'cylinders': 8, 'hybrid': True}])
+```
 
 ## Set
 
